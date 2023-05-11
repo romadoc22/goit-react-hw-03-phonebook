@@ -1,0 +1,37 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 480px;
+  padding: 20px;
+  outline: 2px solid black;
+}
+
+.form__label {
+  display: flex;
+  gap: 8px;
+  flex-direction: column;
+  font-weight: 700;
+}
+
+.form__input {
+  width: 200px;
+}
+
+.form__input:hover,
+.form__input:focus {
+  outline: 0;
+  border: 2px solid deepskyblue;
+}
+
+.form__button {
+  display: flex;
+  width: 100px;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #6fc5ec;
+  margin-left: 50px;
+  border-radius: 20px;
+  border: 0;
+}

@@ -1,0 +1,11 @@
+.filter__label {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.filter__input {
+  display: block;
+  width: 300px;
+}
