@@ -7,23 +7,26 @@ import css from 'components/App/App.module.css';
 
 class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
+
+  initialContacts = [
+    { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
+    { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
+    { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
+    { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
+  ];
 
   componentDidMount() {
     const saveContacts = localStorage.getItem('contacts');
     if (saveContacts !== null) {
       this.setState(this.state.contacts);
       const parsedContacts = JSON.parse(saveContacts);
-      this.setState([parsedContacts, ...this.state.contacts]);
-      // return;
+      this.setState({ contacts: parsedContacts });
+      return;
     }
+    this.setState({ contacts: this.initialContacts });
   }
 
   componentDidUpdate(_, prevState) {
